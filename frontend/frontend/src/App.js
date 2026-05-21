@@ -8,7 +8,7 @@ function App() {
 
   const checkCredibility = async () => {
 
-    // ✅ prevent empty input
+    // Prevent empty input
     if (!news.trim()) {
       setResult("Please enter news text");
       return;
@@ -17,19 +17,18 @@ function App() {
     try {
 
       const response = await axios.post(
-        'http://127.0.0.1:5000/predict',
+        'https://fake-news-detection-credibility-scoring.onrender.com/predict',
         {
           text: news
         }
       );
 
-      // ✅ safe check
       setResult(response.data?.prediction || "No result from server");
 
     } catch (error) {
 
       console.log(error);
-      setResult("Server Error (Check backend running)");
+      setResult("Server Error");
 
     }
   };
