@@ -1,35 +1,31 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pickle
-import os
 
 app = Flask(__name__)
 CORS(app)
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model = pickle.load(open('model.pkl', 'rb'))
+vectorizer = pickle.load(open('vectorizer.pkl', 'rb'))
 
-# load model + vectorizer
-model = pickle.load(open(os.path.join(BASE_DIR, "model.pkl"), "rb"))
-vectorizer = pickle.load(open(os.path.join(BASE_DIR, "vectorizer.pkl"), "rb"))
-
-@app.route("/")
+@app.route('/')
 def home():
-    return "Fake News API Running"
+    return "Fake News Detection Backend Running"
 
-@app.route("/predict", methods=["POST"])
+@app.route('/predict', methods=['POST'])
 def predict():
+
     data = request.get_json()
-    text = data.get("text", "")
+    text = data['text']
 
-    # transform text using vectorizer
-    text_vector = vectorizer.transform([text])
+    vector = vectorizer.transform([text])
+    prediction = model.predict(vector)[0]
 
-    # prediction
-    prediction = model.predict(text_vector)[0]
+    result = "REAL" if prediction == 1 else "FAKE"
 
-    result = "Real" if prediction == 1 else "Fake"
+    return jsonify({
+        'prediction': result
+    })
 
-    return jsonify({"prediction": result})
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
