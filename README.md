@@ -12,19 +12,32 @@ https://fake-news-detection-credibility-scoring.onrender.com
 
 ⚡ Tech Stack
 ✦ Python
+
 ✦ Flask
+
 ✦ Machine Learning
+
 ✦ NLP
+
 ✦ React.js
+
 ✦ HTML
+
 ✦ CSS
+
 ✦ JavaScript
 
+
 ✨ Features
+
 ➜ Detect fake news
+
 ➜ Credibility scoring system
+
 ➜ Real/Fake prediction
+
 ➜ User-friendly interface
+
 ➜ Online ML prediction platform
 
 🔗 Project Repository
