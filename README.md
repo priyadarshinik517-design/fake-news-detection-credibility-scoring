@@ -28,7 +28,7 @@ https://fake-news-detection-credibility-scoring.onrender.com
 ✦ JavaScript
 
 
-✨ Features
+✨ ## Features
 
 ➜ Detect fake news
 
@@ -44,4 +44,5 @@ https://fake-news-detection-credibility-scoring.onrender.com
 https://github.com/priyadarshinik517-design/fake-news-detection-credibility-scoring
 
 👩‍💻 Developed By
+
 Priyadarshini K
