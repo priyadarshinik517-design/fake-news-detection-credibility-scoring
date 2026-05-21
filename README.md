@@ -11,6 +11,7 @@ https://fake-news-detection-credibility-scoring.onrender.com
 🔹 A Machine Learning based web application that detects fake news and analyzes the credibility of news content using NLP and classification algorithms.
 
 ⚡ Tech Stack
+
 ✦ Python
 
 ✦ Flask
